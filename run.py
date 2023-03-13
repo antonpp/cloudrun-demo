@@ -15,7 +15,7 @@ def hello_world():
 def get_source():
     address = request.args.get('address', 'not_provided')
     url = "https://api.etherscan.io/api?module=contract&action=getsourcecode&address={ADDR}&apikey={KEY}".format(**{
-        'ADDR': to_address,
+        'ADDR': address,
         'KEY': os.environ['ETHERSCAN_KEY']
     })
     f = urllib.request.urlopen(url)
